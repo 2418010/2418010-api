@@ -1,58 +1,140 @@
-2418010-apinews.md
-2026-04-13
+# DOKUMENTASI API NEWS PORTAL
+
+**Nama:** Teofilu Verceli Ngamal  
+**NIM:** 2418010  
+**Kelas:** A  
+**Tanggal:** 2026-04-13  
+
+---
+
+## Deskripsi
 Dokumentasi ini menjelaskan tentang spesifikasi API pada layanan News Portal khusus untuk data berita.
-Base URL
+
+---
+
+## BASE URL
 http://localhost:8000/api/
-Endpoints
-GET /news
-Endpoint ini untuk mendapatkan daftar berita
+
+---
+
+## ENDPOINTS
+
+---
+
+### 1. GET /news
+Menampilkan daftar semua berita
+
+#### Response
+**Status: 200 (OK)**
+```json
+{
+  "status": true,
+  "message": "Berhasil",
+  "data": [
+    {
+      "id": 1,
+      "judul": "Perkembangan Teknologi 2026",
+      "isi": "Isi lengkap berita teknologi",
+      "kategori_id": 1,
+      "tanggal": "2026-04-10"
+    }
+  ]
+}
+
+Status: 404 (Not Found)
+
+{
+  "status": false,
+  "message": "Data tidak ditemukan"
+}
+2. GET /news/{id}
+
+Menampilkan detail berita berdasarkan ID
+
+Parameter
+id (integer) → ID berita
 Response
+
 Status: 200 (OK)
-Body
-{ "status": true, "message": "Berhasil", "data": [ { "id": 1, "judul": "Perkembangan Teknologi 2026", "isi": "Isi
-lengkap berita teknologi", "kategori_id": 1, "tanggal": "2026-04-10" } ] }
-Status: 404 (Data Not Found)
-Body
-{ "status": false, "message": "Data tidak ditemukan" }
-GET /news/{id}
-Endpoint ini untuk mendapatkan detail dari berita
-Parameter (PATH)
-id: integer (id berita)
-Response
-Status: 200 (OK)
-Body
-{ "status": true, "message": "Berhasil", "data": { "id": 1, "judul": "Perkembangan Teknologi 2026", "isi": "Isi
-lengkap berita teknologi", "kategori_id": 1, "tanggal": "2026-04-10" } }
-POST /news
-Endpoint ini untuk menambah berita baru
+
+{
+  "status": true,
+  "message": "Berhasil",
+  "data": {
+    "id": 1,
+    "judul": "Perkembangan Teknologi 2026",
+    "isi": "Isi lengkap berita teknologi",
+    "kategori_id": 1,
+    "tanggal": "2026-04-10"
+  }
+}
+3. POST /news
+
+Menambahkan berita baru
+
 Request Body
-{ "judul": "Berita Terkini", "isi": "Isi berita terbaru hari ini", "kategori_id": 2 }
-1 / 2
-2418010-apinews.md
-2026-04-13
+{
+  "judul": "Berita Terkini",
+  "isi": "Isi berita terbaru hari ini",
+  "kategori_id": 2
+}
 Response
+
 Status: 200 (OK)
-Body
-{ "status": true, "message": "Berhasil", "data": { "id": 2, "judul": "Berita Terkini", "isi": "Isi berita terbaru hari ini",
-"kategori_id": 2 } }
-PUT /news/{id}
-Endpoint ini untuk memperbarui berita terpilih
-Parameter (PATH)
-id: integer (id berita)
+
+{
+  "status": true,
+  "message": "Berhasil",
+  "data": {
+    "id": 2,
+    "judul": "Berita Terkini",
+    "isi": "Isi berita terbaru hari ini",
+    "kategori_id": 2
+  }
+}
+4. PUT /news/{id}
+
+Memperbarui data berita
+
+Parameter
+id (integer) → ID berita
 Request Body
-{ "judul": "Berita Update Terbaru", "isi": "Isi berita sudah diperbarui", "kategori_id": 3 }
+{
+  "judul": "Berita Update Terbaru",
+  "isi": "Isi berita sudah diperbarui",
+  "kategori_id": 3
+}
 Response
+
 Status: 200 (OK)
-Body
-{ "status": true, "message": "Berhasil", "data": { "id": 1, "judul": "Berita Update Terbaru", "isi": "Isi berita sudah
-diperbarui", "kategori_id": 3 } }
-DELETE /news/{id}
-Endpoint ini untuk menghapus berita terpilih
-Parameter (PATH)
-id: integer (id berita)
+
+{
+  "status": true,
+  "message": "Berhasil",
+  "data": {
+    "id": 1,
+    "judul": "Berita Update Terbaru",
+    "isi": "Isi berita sudah diperbarui",
+    "kategori_id": 3
+  }
+}
+5. DELETE /news/{id}
+
+Menghapus berita berdasarkan ID
+
+Parameter
+id (integer) → ID berita
 Response
+
 Status: 200 (OK)
-Body
-{ "status": true, "message": "Berhasil", "data": { "id": 1, "judul": "Berita Update Terbaru", "isi": "Isi berita sudah
-diperbarui", "kategori_id": 3 } }
-2 / 2
+
+{
+  "status": true,
+  "message": "Berhasil",
+  "data": {
+    "id": 1,
+    "judul": "Berita Update Terbaru",
+    "isi": "Isi berita sudah diperbarui",
+    "kategori_id": 3
+  }
+}
