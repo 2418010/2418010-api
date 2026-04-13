@@ -3,7 +3,6 @@
 **Nama:** Teofilu Verceli Ngamal  
 **NIM:** 2418010  
 **Kelas:** A  
-**Tanggal:** 2026-04-13  
 
 ---
 
